@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-import { Eye, Home } from "lucide-react"
+import { Eye, Home, Book } from "lucide-react"
 
 export const Dock = () => {
   return (
@@ -11,6 +11,9 @@ export const Dock = () => {
         </Link>
         <Link href={"/blog"} className="header-item">
           <Eye className="size-4" />
+        </Link>
+        <Link href={"/slug"} className="header-item">
+          <Book className="size-4" />
         </Link>
       </nav>
     </header>

@@ -1,0 +1,88 @@
+---
+title: "Blog Dito"
+description: "Panduan Lengkap Belajar Next.js untuk Pemula"
+date: "2025-05-24"
+tags: ["nextjs", "react", "web-development"]
+published: true
+image: "/images/blog/people.webp"
+author: "Salman"
+author_image: "https://avatars.githubusercontent.com/u/116475964?v=4"
+author_email: "faris.kocak@gmail.com"
+---
+
+Belajar Next.js: Panduan Lengkap untuk Pemula
+============================================
+
+Next.js adalah framework React yang powerful untuk membangun aplikasi web modern. Mari kita pelajari bersama-sama!
+
+## Mengapa Next.js?
+
+Next.js menawarkan beberapa keunggulan:
+- Server-side Rendering (SSR)
+- Static Site Generation (SSG)
+- API Routes
+- File-system Routing
+- Built-in CSS & Sass Support
+
+## Cara Memulai
+
+Untuk memulai project Next.js baru:
+
+```bash
+npx create-next-app@latest my-project
+cd my-project
+npm run dev
+```
+
+## Fitur Utama
+
+### 1. Pages dan Routing
+
+Next.js menggunakan sistem routing berbasis file:
+
+```jsx
+// app/about/page.tsx
+export default function About() {
+  return (
+    <div className="container mx-auto">
+      <h1>About Page</h1>
+    </div>
+  )
+}
+```
+
+### 2. Data Fetching
+
+```tsx
+// app/page.tsx
+async function getData() {
+  const res = await fetch('https://api.example.com/data')
+  if (!res.ok) throw new Error('Failed to fetch data')
+  return res.json()
+}
+
+export default async function Page() {
+  const data = await getData()
+  return <main>{/* Render data */}</main>
+}
+```
+
+## Tips dan Trik
+
+1. Gunakan Next.js Image component untuk optimasi gambar
+2. Manfaatkan API Routes untuk backend functionality
+3. Implementasikan dynamic routes untuk konten dinamis
+
+## Kesimpulan
+
+Next.js sangat membantu dalam pengembangan web modern dengan fitur-fitur yang komprehensif untuk membuat aplikasi yang performant dan scalable.
+
+## Resources
+
+- [Dokumentasi Resmi Next.js](https://nextjs.org/docs)
+- [Learn Next.js](https://nextjs.org/learn)
+- [Examples](https://github.com/vercel/next.js/tree/canary/examples)
+
+---
+
+> 💡 **Pro tip**: Mulailah dengan proyek sederhana dan tingkatkan kompleksitasnya secara bertahap.

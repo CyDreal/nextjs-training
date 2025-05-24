@@ -1,6 +1,7 @@
 import { posts } from "#site/content"
-
 import { sortPosts } from "@/lib/utils"
+import Link from "next/link"
+import { imageOptimizer } from "next/dist/server/image-optimizer"
 
 export default async function Page() {
   const sortedPosts = sortPosts(posts.filter((post) => post.published))
@@ -8,13 +9,13 @@ export default async function Page() {
   return (
     <div className="">
       {sortedPosts?.length > 0 ? (
-        <ul className="">
+        <ul className="flex flex-col gap-2">
           {sortedPosts.map((post) => {
             const { title, slug } = post
             return (
-              <li key={title}>
-                <p>{title}</p>
-              </li>
+              <Link href={slug}>
+                {title}
+              </Link>
             )
           })}
         </ul>
